@@ -1,0 +1,20 @@
+[package]
+name = "ra-tls-parse"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "PEM/key parsing utilities for RA-TLS certificate handling"
+repository = "https://github.com/TeeSQL/ra-tls-parse"
+homepage = "https://github.com/TeeSQL/ra-tls-parse"
+keywords = ["ra-tls", "tls", "tee", "attestation", "rustls"]
+categories = ["cryptography", "network-programming"]
+
+[dependencies]
+rustls = "0.23"
+rustls-pemfile = "2"
+rustls-pki-types = "1"
+anyhow = "1"
+
+[dev-dependencies]
+rcgen = "0.13"
+tokio = { version = "1", features = ["full"] }
