@@ -22,7 +22,10 @@ fn parse_private_key_pkcs8_succeeds() {
 fn parse_private_key_cert_only_returns_err() {
     let (cert_pem, _key_pem) = make_cert_and_key();
     let result = parse_private_key(&cert_pem);
-    assert!(result.is_err(), "expected Err when PEM contains only a certificate");
+    assert!(
+        result.is_err(),
+        "expected Err when PEM contains only a certificate"
+    );
 }
 
 #[test]
@@ -57,7 +60,10 @@ fn parse_certificates_chain_returns_correct_count() {
 fn parse_certificates_no_cert_pem_returns_err() {
     let (_cert_pem, key_pem) = make_cert_and_key();
     let result = parse_certificates(&key_pem);
-    assert!(result.is_err(), "expected Err when PEM contains only a private key");
+    assert!(
+        result.is_err(),
+        "expected Err when PEM contains only a private key"
+    );
 }
 
 #[test]
